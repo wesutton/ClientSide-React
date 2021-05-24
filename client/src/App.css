@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.container {
+  max-width: 75%;
+  height: auto;
+  background-image: url("./components/background.png");
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 50px;
+  box-shadow: 2px 2px 5px black;
+
+}
+
+.title {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 50;
+  font-weight: 800;
+  color: black;
+  text-align: center;
+}
+
+.page {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 20;
+  color: seashell;
+  
+}
