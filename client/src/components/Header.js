@@ -8,7 +8,7 @@ const Header = (props) => {
     return (
         <header>
             <Navbar className="header">
-                <NavbarBrand href ="/"> MyPlanner App </NavbarBrand>
+                <NavbarBrand href ="/"> Calendar App </NavbarBrand>
                 <Nav className = "ml-auto" navbar>
                     <NavItem>
                         <Button onClick = {props.clickLogout}>Logout</Button>
