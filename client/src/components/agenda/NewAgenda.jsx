@@ -78,8 +78,6 @@ const New = (props) => {
     )
 }
 
-
-
 export default New
 
 

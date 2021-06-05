@@ -1,12 +1,12 @@
 import React from 'react'
-import Date from '../components/DateAgenda';
+import Date from './DateAgenda';
 
-const Header = () => {
+const DayHeader = () => {
     return (
         <div>
-            <h1 className="font-weight-light display-1 text-center">
+            <h2 className="font-weight-light display-1 text-center">
                 DAY PLANNER
-            </h1>
+            </h2>
 
             <div className="headerDate"> 
                 <Date />
@@ -17,4 +17,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default DayHeader

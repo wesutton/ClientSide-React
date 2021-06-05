@@ -2,10 +2,14 @@ body {
   background: url(https://www.toptal.com/designers/subtlepatterns/patterns/lightpaperfibers.png);
   font-family: 'Quicksand', sans-serif;
   color: cornflowerblue;
-  
+  display: flex;
+  justify-content: center;
+  padding: 0;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 
 
 .btn {
@@ -14,28 +18,9 @@ body {
   background-color: cornflowerblue; 
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
-
-.updates {
-  display: flex;
-  margin: 30px 20px 30px 20px;
-}
-
-
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
-
-body {
-  font-family: "Quicksand", sans-serif;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  color: cornflowerblue;
-}
-
-
-
 #title {
   text-align: center;
+  font-size: 60px;
   margin-top: 20px;
   margin-bottom: 15px;
 }
@@ -88,4 +73,3 @@ body {
 .button:active {
   border: 1px solid blue;
 }
-
