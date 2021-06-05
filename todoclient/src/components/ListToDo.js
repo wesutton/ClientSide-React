@@ -3,6 +3,16 @@ import axios from "axios"
 const ListTodos = () => {
 
     const [data, setData] = useState([]);
+    const deleteItem = async (id) => {
+        try {
+            const deleteItem = await axios.delete(`http://localhost:3000/toDo/delete/${id}`, {
+                method: "DELETE"
+            });
+            console.log(deleteItem)
+        } catch (err) {
+            console.error(err.message)
+        }
+    };
 
     useEffect (() => {
         getData();
@@ -35,7 +45,7 @@ const ListTodos = () => {
     <tr>
       <th scope="col">#</th>
       <th scope="col">Description</th>
-      <th scope="col">Priority</th>
+      {/* <th scope="col">Priority</th> */}
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
@@ -49,12 +59,12 @@ const ListTodos = () => {
     </tr>*/}
 
     {data.map(todo => (
-        <tr>
+        <tr key = {todo.id}>
             <td>{todo.id}</td>
             <td>{todo.item}</td>
-            <td>{todo.priority}</td>
-            <td><button>Edit</button></td>
-            <td><button className="btn btn-danger" on>Delete</button></td>
+            {/* <td>{todo.priority}</td> */}
+            <td><button className="btn btn-outline-dark">Edit</button></td>
+            <td><button className="btn btn-outline-danger" onClick={() => deleteItem(todo.id)}>Delete</button></td>
         </tr>
     ))}
    
