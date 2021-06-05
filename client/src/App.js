@@ -1,27 +1,23 @@
 import React from 'react';
 import Header from './components/Header';
-import New from './components/New'
-import Today from './components/DayPlanner';
-import Update from './components/Update'
-import All from './components/All'
-import 'react-table/react-table.css'
+import Today from './components/DayPlanner'
+import New from './components/NewAgenda'
+import All from './components/AllAgenda'
 
 
-const App = () => {
-    return (
-        <>
-            <Header />
-                 
-            <Today />
-  
-            <New />
 
-            <Update />
+function App() {
+  return (
+        <div>
+          <Header />
+          <Today />
+          <New />
+          <All />
 
-            <All />
-        
-        </>
-    )
-}
+        </div>
+          
+    
+    );
+  };
 
 export default App

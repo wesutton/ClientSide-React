@@ -4,9 +4,9 @@ import axios from 'axios'
 
 
 const Today = () => {
-    const [agendaList, setAgendaList] = useState()
+const [agendaList, setAgendaList] = useState()
     useEffect(() => { getData() }, [])
-    const getData = async () => {
+const getData = async () => {
         let today = new Date()
         let strDate = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`
         console.log(strDate)
@@ -19,7 +19,7 @@ const Today = () => {
 const URL = 'http://localhost:5001/agenda'
 
     
-    const removeData = (id) => {
+const removeData = (id) => {
 
         axios.delete(`${URL}/delete/${id}`).then(res => {
             const del = agendaList.filter(agendas => id !== agendas.id)
@@ -28,15 +28,15 @@ const URL = 'http://localhost:5001/agenda'
     }
 
     
-    const renderHeader = () => {
-        let headerElement = ['start', 'end', 'priority', 'description', 'id', 'delete', 'add']
+const renderHeader = () => {
+        let headerElement = ['start', 'end', 'priority', 'description', 'id', 'delete']
 
         return headerElement.map((key, date) => {
             return <th key={date}>{key.toUpperCase()}</th>
         })
     }
 
-    const renderBody = () => {
+const renderBody = () => {
         console.log(agendaList)
         return agendaList && agendaList.map(({ id, start, end, priority, item }) => {
             return (
@@ -49,12 +49,6 @@ const URL = 'http://localhost:5001/agenda'
                     <td className='operation'>
                         <button className='button' onClick={() => removeData(id)}>Delete</button>
                     </td>
-                    <td className='operation'>
-                    <button type="button" className='button' data-toggle="modal" data-target="addNewItem">
-                        Add
-                    </button>
-                    </td>
-                    
                 </tr>
             )
         })
