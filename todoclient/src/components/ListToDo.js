@@ -1,5 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import axios from "axios"
+import EditTodo from './EditToDo'
+
 const ListTodos = () => {
 
     const [data, setData] = useState([]);
@@ -63,7 +65,11 @@ const ListTodos = () => {
             <td>{todo.id}</td>
             <td>{todo.item}</td>
             {/* <td>{todo.priority}</td> */}
-            <td><button className="btn btn-outline-dark">Edit</button></td>
+            <td>
+                {/* <button className="btn"> */}
+                <EditTodo todo = {todo}/>
+                {/* </button> */}
+                </td>
             <td><button className="btn btn-outline-danger" onClick={() => deleteItem(todo.id)}>Delete</button></td>
         </tr>
     ))}

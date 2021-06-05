@@ -3,12 +3,13 @@ import React, {Fragment, useState} from "react";
 const InputToDo = () => {
     const [item, setItem] = useState("");
     // const onSubmitForm = async e => { e.preventDefault();
-    const handleSubmit = (e) => { e.preventDefault();
-        fetch('http://localhost:3000/toDo/add', {
+    const handleSubmit=(e)=>
+    {e.preventDefault();
+        fetch('http://localhost:3000/toDo/add',{
                 method: "POST",
-                body: JSON.stringify({toDo: {item: item, priority:"none"}}),
+                body: JSON.stringify({toDo:{item:item, priority:"none"}}),
                 headers: new Headers({
-                "Content-Type": "application/json"})
+                "Content-Type":"application/json"})
             }) .then((res) => res.json())
                .then((logData) => {
                    console.log(logData);
