@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Update from './Update'
 
-const All = () => {
+
+const AllAgenda = () => {
     const [allItems, setAllItems] = useState()
     useEffect(() => { getData() }, [])
     const getData = async () => {
@@ -15,7 +15,7 @@ const All = () => {
 
     
     const renderHeader = () => {
-        let headerElement = ['id', 'date', 'start', 'end', 'priority', 'item', 'update']
+        let headerElement = ['id', 'date', 'start', 'end', 'priority', 'item']
 
         return headerElement.map((key, id) => {
             return <th key={id}>{key.toUpperCase()}</th>
@@ -33,9 +33,7 @@ const All = () => {
                     <td>{end}</td>
                     <td>{priority}</td>
                     <td>{item}</td>
-                    <td className='operation'>
-                        <button className='button' onClick>Update</button>
-                    </td>
+                    
                     
                     
                 </tr>
@@ -64,4 +62,4 @@ const All = () => {
 
 
 
-export default All
+export default AllAgenda
