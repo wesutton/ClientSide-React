@@ -2,8 +2,9 @@
 import React, { useState } from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
-const Update = (props) => {
-    const [ id, setId ] = useState('');
+
+const New = (props) => {
+    
     const [ date, setDate ] = useState('');
     const [ start, setStart ] = useState('');
     const [ end, setEnd ] = useState('');
@@ -12,16 +13,15 @@ const Update = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:5001/agenda/update/:id', {
-            method: 'PUT',
-            body: JSON.stringify({ agenda: {id: id, date: date, start: start, end: end, priority: priority, item: item }}),
+        fetch('http://localhost:5001/agenda/create', {
+            method: 'POST',
+            body: JSON.stringify({ agenda: {date: date, start: start, end: end, priority: priority, item: item }}),
             headers: new Headers({
             'Content-Type': 'application/json'
             })
             }) .then((res) => res.json())
             .then((logData) => {
                 console.log(logData);
-                setId('');
                 setDate('');
                 setStart('');
                 setEnd('');
@@ -29,24 +29,15 @@ const Update = (props) => {
                 setItem('');           
         })         
     }
+
     return (
         
-        <div className="updateForm">
-            <h2>Update Agenda Item</h2>
+        <div className="enterForm">
+            <h2>New Agenda Item</h2>
             
             <Form onSubmit={ handleSubmit } >
-            <FormGroup>
-                    <Label htmlFor='id'>ID</Label>
-                    <Input name="id" value={ id } onChange={(e) => setId(e.target.value)}/>
-                </FormGroup>
 
                 <FormGroup>
-                    <Label htmlFor='date'>Date</Label>
-                    <Input name="date" value={ date } onChange={(e) => setDate(e.target.value)}/>
-                </FormGroup>
-
-
-                {/* <FormGroup>
                     <Label for="Date">Date</Label>
                         <Input
                         type="date"
@@ -54,10 +45,10 @@ const Update = (props) => {
                         id="newDate"
                         placeholder="date placeholder"
                         />
-                </FormGroup> */}
+                </FormGroup>
 
                 <FormGroup>
-                    <Label htmlFor='start'>Start</Label>
+                    <Label htmlFor='end'>Start</Label>
                     <Input name="start" value={ start } onChange={(e) => setStart(e.target.value)}/>
                 </FormGroup> 
 
@@ -68,7 +59,7 @@ const Update = (props) => {
                
                 <FormGroup>
                     <Label htmlFor='priority'>Priority</Label>
-                    <Input type="select" name="select" value={ priority } onChange={(e) => setPriority(e.target.value)} 
+                    <Input type="select" name="select" value={ end } onChange={(e) => setPriority(e.target.value)} 
                     id="priority">
                     <option>High</option>
                     <option>Medium</option>
@@ -87,4 +78,7 @@ const Update = (props) => {
     )
 }
 
-export default Update
+export default New
+
+
+
