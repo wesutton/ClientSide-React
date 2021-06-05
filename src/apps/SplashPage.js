@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { Fragment }  from 'react';
+import InputToDo from '../../todoclient/src/components/InputToDo';
+import ListTodos from '../../todoclient/src/components/ListToDo'
 
 const SplashPage = (props) => {
     return(
-        <div>
-            Calendar App and To Do list
+        <Fragment>
+        <div>Agenda goes here</div>
+        <div className="container">
+            <InputToDo/>
+            <ListTodos/>
         </div>
+        </Fragment>
     )
 }
 
