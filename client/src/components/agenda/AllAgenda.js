@@ -6,7 +6,7 @@ const AllAgenda = () => {
     const [allItems, setAllItems] = useState()
     useEffect(() => { getData() }, [])
     const getData = async () => {
-        const response = await axios.get('http://localhost:3000/agenda/entries')
+        const response = await axios.get('http://localhost:3001/agenda/entries')
         console.log(response)
         setAllItems(response.data.agenda)
         }

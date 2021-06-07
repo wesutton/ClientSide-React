@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.scss'
 import Auth from './auth/Auth'
-import SplashPage from './SplashPage';
+import SplashPage from './apps/SplashPage';
 import Header from './components/user/Header';
 import Footer from './components/user/Footer';
 

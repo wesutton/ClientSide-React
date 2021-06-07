@@ -16,7 +16,7 @@ const getData = async () => {
     }
 
 
-const URL = 'http://localhost:5001/agenda'
+const URL = 'http://localhost:3001/agenda'
 
     
 const removeData = (id) => {

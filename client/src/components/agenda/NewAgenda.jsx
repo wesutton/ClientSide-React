@@ -13,7 +13,7 @@ const New = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/agenda/create', {
+        fetch('http://localhost:3001/agenda/create', {
             method: 'POST',
             body: JSON.stringify({ agenda: {date: date, start: start, end: end, priority: priority, item: item }}),
             headers: new Headers({

@@ -4,7 +4,7 @@ const InputToDo = () => {
     const [item, setItem] = useState("");
     // const onSubmitForm = async e => { e.preventDefault();
     const handleSubmit = (e) => { e.preventDefault();
-        fetch('http://localhost:3000/toDo/add', {
+        fetch('http://localhost:3001/toDo/add', {
                 method: "POST",
                 body: JSON.stringify({toDo: {item: item, priority:"none"}}),
                 headers: new Headers({

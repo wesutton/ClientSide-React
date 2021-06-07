@@ -5,7 +5,7 @@ const ListTodos = () => {
     const [data, setData] = useState([]);
     const deleteItem = async (id) => {
         try {
-            const deleteItem = await axios.delete(`http://localhost:3000/toDo/delete/${id}`, {
+            const deleteItem = await axios.delete(`http://localhost:3001/toDo/delete/${id}`, {
                 method: "DELETE"
             });
             console.log(deleteItem)
@@ -21,7 +21,7 @@ const ListTodos = () => {
     const getData = async () => {
         try {
 
-            const response = await axios.get('http://localhost:3000/toDo/list')
+            const response = await axios.get('http://localhost:3001/toDo/list')
             // const jsonData = await response.json();
 
             setData(response.data.toDo);

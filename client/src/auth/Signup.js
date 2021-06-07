@@ -51,7 +51,7 @@ const formValidation = () => {
 
 let handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3000/user/register", {
+    fetch("http://localhost:3001/user/register", {
         method: 'POST', 
         body: JSON.stringify({user: {firstName: firstName, lastName: lastName, email: email, password: password}}),
         headers: new Headers({
